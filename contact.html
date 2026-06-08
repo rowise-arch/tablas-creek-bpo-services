@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Contact Tablas Creek — schedule a discovery call and start building your elite offshore team today.">
   <title>Contact | Tablas Creek</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -91,12 +92,13 @@
                 <a href="mailto:hello@tablascreek.com" class="btn btn-primary btn-large" style="width:100%;justify-content:center;margin-bottom:1rem">
                   Email Us to Schedule
                 </a>
-                <button class="btn btn-outline" style="width:100%;justify-content:center" onclick="loadCalendly()">
-                  Or Load Calendar Widget
+                <button class="btn btn-outline" id="loadCalendlyBtn" style="width:100%;justify-content:center">
+                  Load Calendar Widget
                 </button>
                 <p style="margin-top:1rem;font-size:0.78rem;color:var(--text-muted);text-align:center">30-min consultation &middot; No obligation &middot; Any timezone</p>
               </div>
-              <div id="calendlyInline" style="min-height:650px;display:none;" aria-label="Calendly scheduling widget"></div>
+              <!-- Calendly container - hidden until button click -->
+              <div id="calendlyContainer" style="width:100%; min-height:650px; display:none;"></div>
             </div>
           </div>
         </div>
@@ -115,6 +117,53 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Load Calendly only when button is clicked
+    document.getElementById('loadCalendlyBtn').addEventListener('click', function() {
+      const container = document.getElementById('calendlyContainer');
+      const placeholder = document.getElementById('calendlyPlaceholder');
+      
+      // Hide placeholder, show container
+      placeholder.style.display = 'none';
+      container.style.display = 'block';
+      
+      // Create wrapper div for proper sizing
+      const wrapper = document.createElement('div');
+      wrapper.className = 'calendly-inline-widget';
+      wrapper.setAttribute('data-url', 'https://calendly.com/jeffreyrouisse/30min');
+      wrapper.style.width = '100%';
+      wrapper.style.height = '650px';
+      
+      container.appendChild(wrapper);
+      
+      // Load Calendly script if not already loaded
+      if (!window.Calendly) {
+        const script = document.createElement('script');
+        script.src = 'https://assets.calendly.com/assets/external/widget.js';
+        script.async = true;
+        document.head.appendChild(script);
+      } else {
+        window.Calendly.initInlineWidget({
+          url: 'https://calendly.com/jeffreyrouisse/30min',
+          parentElement: wrapper,
+          prefill: {}
+        });
+      }
+    });
+    
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true' ? false : true;
+        hamburger.setAttribute('aria-expanded', expanded);
+        mobileMenu.classList.toggle('show');
+      });
+    }
+  </script>
   <script src="js/main.js"></script>
 </body>
 </html>
