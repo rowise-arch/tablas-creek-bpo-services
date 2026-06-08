@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Tablas Creek — schedule a discovery call and start building your elite offshore team today.">
+  <title>Contact | Tablas Creek</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="logo" aria-label="Tablas Creek home">
+        <img src="tablas-creek-logo.png" alt="" class="logo-img" aria-hidden="true">
+        TABLAS <span>CREEK</span>
+      </a>
+      <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="process.html">How It Works</a></li>
+        <li><a href="contact.html" class="nav-cta active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
+    <a href="index.html">Home</a><a href="about.html">Our Story</a><a href="services.html">Services</a>
+    <a href="industries.html">Industries</a><a href="process.html">How It Works</a>
+    <a href="contact.html" class="mobile-cta">Contact</a>
+  </div>
+
+  <main id="main">
+
+    <section class="page-hero" aria-labelledby="contact-heading">
+      <div class="container">
+        <span class="section-label" style="justify-content:center;color:rgba(61,191,176,0.8);margin-bottom:1rem">Let's Connect</span>
+        <h1 id="contact-heading">Let's Talk Strategy</h1>
+        <p>Ready to build your elite offshore team? Schedule a discovery call today.</p>
+      </div>
+    </section>
+
+    <section class="contact-section" aria-labelledby="contact-form-heading">
+      <div class="container">
+        <h2 id="contact-form-heading" class="sr-only">Contact options</h2>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="info-card">
+              <h3>Direct Contact</h3>
+              <p>
+                <strong style="font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:0.5rem">Email</strong>
+                hello@tablascreek.com
+              </p>
+              <p style="margin-top:0.75rem">
+                <strong style="font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:0.5rem">Phone</strong>
+                +63 (2) 1234 5678
+              </p>
+              <p style="margin-top:0.75rem">
+                <strong style="font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:0.5rem">Office</strong>
+                Tablas Island, Romblon, Philippines
+              </p>
+            </div>
+            <div class="info-card">
+              <h3>Global Operations</h3>
+              <p>We serve clients worldwide with flexible engagement models — full-time dedicated teams, project-based, or hourly support.</p>
+              <div class="tag-group" style="margin-top:1rem">
+                <span class="tag">Full-Time Teams</span>
+                <span class="tag">Project-Based</span>
+                <span class="tag">Hourly Support</span>
+              </div>
+            </div>
+            <div class="info-card">
+              <h3>Response Time</h3>
+              <p>We respond to all inquiries within <strong>24 business hours</strong>. Discovery calls are typically scheduled within 48–72 hours of first contact.</p>
+            </div>
+          </div>
+
+          <div>
+            <div class="calendly-card">
+              <h3>Schedule a Discovery Call</h3>
+              <p>Choose a time that works for you. 30-minute strategy session, no obligation.</p>
+              <div class="calendly-placeholder" id="calendlyPlaceholder">
+                <a href="mailto:hello@tablascreek.com" class="btn btn-primary btn-large" style="width:100%;justify-content:center;margin-bottom:1rem">
+                  Email Us to Schedule
+                </a>
+                <button class="btn btn-outline" style="width:100%;justify-content:center" onclick="loadCalendly()">
+                  Or Load Calendar Widget
+                </button>
+                <p style="margin-top:1rem;font-size:0.78rem;color:var(--text-muted);text-align:center">30-min consultation &middot; No obligation &middot; Any timezone</p>
+              </div>
+              <div id="calendlyInline" style="min-height:650px;display:none;" aria-label="Calendly scheduling widget"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><div class="footer-logo">TABLAS CREEK</div><p>Business Process Outsourcing Services</p><p class="copyright">&copy; 2025 Tablas Creek. All rights reserved.</p></div>
+        <div class="footer-links"><h4>Company</h4><a href="about.html">Our Story</a><a href="services.html">Services</a></div>
+        <div class="footer-links"><h4>Resources</h4><a href="process.html">How It Works</a></div>
+        <div class="footer-links"><h4>Connect</h4><a href="contact.html">Contact Us</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
