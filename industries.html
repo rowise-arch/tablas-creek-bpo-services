@@ -24,18 +24,65 @@
       </button>
       <ul class="nav-links" role="list">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">Our Story</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="industries.html" class="active">Industries</a></li>
+        <li class="has-dropdown">
+          <a href="about.html" class="nav-link-dropdown">Our Story <svg class="chevron" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
+          <div class="dropdown-panel" role="menu">
+            <a href="about.html" role="menuitem"><span class="dd-title">Our Story</span><span class="dd-sub">How it all began</span></a>
+            <a href="why-us.html" role="menuitem"><span class="dd-title">Why Choose Us</span><span class="dd-sub">What sets us apart</span></a>
+            <a href="culture.html" role="menuitem"><span class="dd-title">Our Culture</span><span class="dd-sub">Community &amp; values</span></a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="services.html" class="nav-link-dropdown">Services <svg class="chevron" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
+          <div class="dropdown-panel" role="menu">
+            <a href="accounting.html" role="menuitem"><span class="dd-title">Accounting &amp; Finance</span><span class="dd-sub">Bookkeeping, FP&amp;A, Virtual CFO</span></a>
+            <a href="engineering.html" role="menuitem"><span class="dd-title">Engineering &amp; Technical</span><span class="dd-sub">CAD, BIM, Quantity Surveying</span></a>
+            <a href="creative.html" role="menuitem"><span class="dd-title">Creative &amp; IT</span><span class="dd-sub">Design, Development, Media</span></a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="industries.html" class="nav-link-dropdown active">Industries <svg class="chevron" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
+          <div class="dropdown-panel" role="menu">
+            <a href="industries-professional-financial.html" role="menuitem"><span class="dd-title">Professional &amp; Financial</span><span class="dd-sub">Legal, consulting, insurance</span></a>
+            <a href="industries-engineering-utilities.html" role="menuitem"><span class="dd-title">Engineering &amp; Utilities</span><span class="dd-sub">Construction, renewables</span></a>
+            <a href="industries-technology-media.html" role="menuitem"><span class="dd-title">Technology &amp; Media</span><span class="dd-sub">IT, telecom, content</span></a>
+            <a href="industries-healthcare-consumer.html" role="menuitem"><span class="dd-title">Healthcare &amp; Consumer</span><span class="dd-sub">Retail, hospitality, education</span></a>
+          </div>
+        </li>
         <li><a href="process.html">How It Works</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
     </div>
   </nav>
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
-    <a href="index.html">Home</a><a href="about.html">Our Story</a><a href="services.html">Services</a>
-    <a href="industries.html">Industries</a><a href="process.html">How It Works</a>
-    <a href="contact.html" class="mobile-cta">Contact</a>
+    <a href="index.html">Home</a>
+    <details class="mobile-group">
+      <summary>Our Story <svg class="mg-chevron" width="12" height="12" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></summary>
+      <div class="mobile-sub">
+      <a href="about.html">Our Story</a>
+      <a href="why-us.html">Why Choose Us</a>
+      <a href="culture.html">Our Culture</a>
+      </div>
+    </details>
+    <details class="mobile-group">
+      <summary>Services <svg class="mg-chevron" width="12" height="12" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></summary>
+      <div class="mobile-sub">
+      <a href="accounting.html">Accounting &amp; Finance</a>
+      <a href="engineering.html">Engineering &amp; Technical</a>
+      <a href="creative.html">Creative &amp; IT</a>
+      </div>
+    </details>
+    <details class="mobile-group">
+      <summary>Industries <svg class="mg-chevron" width="12" height="12" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></summary>
+      <div class="mobile-sub">
+      <a href="industries-professional-financial.html">Professional &amp; Financial</a>
+      <a href="industries-engineering-utilities.html">Engineering &amp; Utilities</a>
+      <a href="industries-technology-media.html">Technology &amp; Media</a>
+      <a href="industries-healthcare-consumer.html">Healthcare &amp; Consumer</a>
+      </div>
+    </details>
+    <a href="process.html">How It Works</a>
+    <a href="contact.html" class="mobile-cta">Contact Us</a>
   </div>
 
   <main id="main">
@@ -48,77 +95,49 @@
       </div>
     </section>
 
-    <section style="padding:var(--space-20) 0" aria-labelledby="industries-grid-heading">
+    <section aria-labelledby="industries-groups-heading">
       <div class="container">
         <div class="section-header">
-          <span class="section-label">10+ Sectors</span>
-          <h2 id="industries-grid-heading">Built for Your Industry</h2>
+          <span class="section-label">10+ Sectors, 4 Focus Areas</span>
+          <h2 id="industries-groups-heading">Built for Your Industry</h2>
           <p>Our professionals are recruited and matched to your specific sector needs — not just general skills.</p>
         </div>
         <div class="industries-grid-full">
-          <div class="industry-category">
-            <h3>💼 Professional Services</h3>
+          <a href="industries-professional-financial.html" class="industry-category industry-group-card">
+            <h3>&#128188; Professional &amp; Financial</h3>
+            <p>Legal support, consulting, and financial &amp; insurance services.</p>
             <div class="industry-tags">
-              <span>Legal Support</span><span>Consulting</span><span>Executive Assistance</span>
+              <span>Legal Support</span><span>Consulting</span><span>Accounting</span><span>Claims Processing</span>
             </div>
-          </div>
-          <div class="industry-category">
-            <h3>🏗️ Engineering &amp; Construction</h3>
+            <span class="service-more">Explore industries &rarr;</span>
+          </a>
+          <a href="industries-engineering-utilities.html" class="industry-category industry-group-card">
+            <h3>&#127959;&#65039; Engineering &amp; Utilities</h3>
+            <p>Construction, engineering support, and utilities &amp; renewables.</p>
             <div class="industry-tags">
-              <span>CAD/BIM</span><span>Quantity Surveying</span><span>Project Coordination</span>
+              <span>CAD/BIM</span><span>Quantity Surveying</span><span>Data Analysis</span><span>Permitting</span>
             </div>
-          </div>
-          <div class="industry-category">
-            <h3>💰 Financial &amp; Insurance</h3>
+            <span class="service-more">Explore industries &rarr;</span>
+          </a>
+          <a href="industries-technology-media.html" class="industry-category industry-group-card">
+            <h3>&#128187; Technology &amp; Media</h3>
+            <p>Software, IT support, and media &amp; telecom services.</p>
             <div class="industry-tags">
-              <span>Accounting</span><span>Claims Processing</span><span>Underwriting Support</span>
+              <span>Software Dev</span><span>Cloud Services</span><span>Content Creation</span><span>Social Media</span>
             </div>
-          </div>
-          <div class="industry-category">
-            <h3>💻 Information Technology</h3>
+            <span class="service-more">Explore industries &rarr;</span>
+          </a>
+          <a href="industries-healthcare-consumer.html" class="industry-category industry-group-card">
+            <h3>&#127973; Healthcare &amp; Consumer</h3>
+            <p>Healthcare, retail, hospitality, and education &amp; training.</p>
             <div class="industry-tags">
-              <span>Software Dev</span><span>IT Support</span><span>Cloud Services</span>
+              <span>Medical Billing</span><span>Order Management</span><span>Guest Services</span><span>Instructional Design</span>
             </div>
-          </div>
-          <div class="industry-category">
-            <h3>🏥 Healthcare &amp; Life Sciences</h3>
-            <div class="industry-tags">
-              <span>Medical Billing</span><span>Telehealth Support</span><span>Claims</span>
-            </div>
-          </div>
-          <div class="industry-category">
-            <h3>🛒 Retail &amp; E-Commerce</h3>
-            <div class="industry-tags">
-              <span>Customer Support</span><span>Order Management</span><span>Product Listing</span>
-            </div>
-          </div>
-          <div class="industry-category">
-            <h3>🏨 Hospitality &amp; Tourism</h3>
-            <div class="industry-tags">
-              <span>Reservations</span><span>Guest Services</span><span>Revenue Management</span>
-            </div>
-          </div>
-          <div class="industry-category">
-            <h3>📚 Education &amp; Training</h3>
-            <div class="industry-tags">
-              <span>Instructional Design</span><span>Virtual Assistants</span><span>Course Support</span>
-            </div>
-          </div>
-          <div class="industry-category">
-            <h3>⚡ Utilities &amp; Renewables</h3>
-            <div class="industry-tags">
-              <span>Data Analysis</span><span>Permitting Support</span><span>Technical Writing</span>
-            </div>
-          </div>
-          <div class="industry-category">
-            <h3>📱 Media &amp; Telecom</h3>
-            <div class="industry-tags">
-              <span>Content Creation</span><span>Social Media</span><span>Customer Experience</span>
-            </div>
-          </div>
+            <span class="service-more">Explore industries &rarr;</span>
+          </a>
         </div>
         <div class="note-box">
-          <strong>✦ Also serving:</strong> Admin Support &middot; CX &amp; Contact Center &middot; Marketing &middot; AI &amp; Automation &middot; Real Estate &middot; Legal Services
+          <strong>&#10022; Also serving:</strong> Admin Support &middot; CX &amp; Contact Center &middot; Marketing &middot; AI &amp; Automation &middot; Real Estate &middot; Legal Services
         </div>
       </div>
     </section>
@@ -132,15 +151,39 @@
       </div>
     </section>
 
+
   </main>
 
   <footer>
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand"><div class="footer-logo">TABLAS CREEK</div><p>Business Process Outsourcing Services</p><p class="copyright">&copy; 2025 Tablas Creek. All rights reserved.</p></div>
-        <div class="footer-links"><h4>Company</h4><a href="about.html">Our Story</a><a href="services.html">Services</a><a href="industries.html">Industries</a></div>
-        <div class="footer-links"><h4>Resources</h4><a href="process.html">How It Works</a></div>
-        <div class="footer-links"><h4>Connect</h4><a href="contact.html">Contact Us</a></div>
+        <div class="footer-brand">
+          <div class="footer-logo">TABLAS CREEK</div>
+          <p>Business Process Outsourcing Services<br>from Tablas Island, Philippines.</p>
+          <p class="copyright">&copy; 2025 Tablas Creek. All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <a href="about.html">Our Story</a>
+          <a href="why-us.html">Why Choose Us</a>
+          <a href="culture.html">Our Culture</a>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <a href="accounting.html">Accounting &amp; Finance</a>
+          <a href="engineering.html">Engineering &amp; Technical</a>
+          <a href="creative.html">Creative &amp; IT</a>
+        </div>
+        <div class="footer-links">
+          <h4>Industries</h4>
+          <a href="industries.html">All Industries</a>
+          <a href="process.html">How It Works</a>
+        </div>
+        <div class="footer-links">
+          <h4>Connect</h4>
+          <a href="contact.html">Contact Us</a>
+          <a href="contact.html">We're Hiring</a>
+        </div>
       </div>
     </div>
   </footer>

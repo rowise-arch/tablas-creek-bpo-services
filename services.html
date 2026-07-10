@@ -24,18 +24,65 @@
       </button>
       <ul class="nav-links" role="list">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">Our Story</a></li>
-        <li><a href="services.html" class="active">Services</a></li>
-        <li><a href="industries.html">Industries</a></li>
+        <li class="has-dropdown">
+          <a href="about.html" class="nav-link-dropdown">Our Story <svg class="chevron" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
+          <div class="dropdown-panel" role="menu">
+            <a href="about.html" role="menuitem"><span class="dd-title">Our Story</span><span class="dd-sub">How it all began</span></a>
+            <a href="why-us.html" role="menuitem"><span class="dd-title">Why Choose Us</span><span class="dd-sub">What sets us apart</span></a>
+            <a href="culture.html" role="menuitem"><span class="dd-title">Our Culture</span><span class="dd-sub">Community &amp; values</span></a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="services.html" class="nav-link-dropdown active">Services <svg class="chevron" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
+          <div class="dropdown-panel" role="menu">
+            <a href="accounting.html" role="menuitem"><span class="dd-title">Accounting &amp; Finance</span><span class="dd-sub">Bookkeeping, FP&amp;A, Virtual CFO</span></a>
+            <a href="engineering.html" role="menuitem"><span class="dd-title">Engineering &amp; Technical</span><span class="dd-sub">CAD, BIM, Quantity Surveying</span></a>
+            <a href="creative.html" role="menuitem"><span class="dd-title">Creative &amp; IT</span><span class="dd-sub">Design, Development, Media</span></a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="industries.html" class="nav-link-dropdown">Industries <svg class="chevron" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
+          <div class="dropdown-panel" role="menu">
+            <a href="industries-professional-financial.html" role="menuitem"><span class="dd-title">Professional &amp; Financial</span><span class="dd-sub">Legal, consulting, insurance</span></a>
+            <a href="industries-engineering-utilities.html" role="menuitem"><span class="dd-title">Engineering &amp; Utilities</span><span class="dd-sub">Construction, renewables</span></a>
+            <a href="industries-technology-media.html" role="menuitem"><span class="dd-title">Technology &amp; Media</span><span class="dd-sub">IT, telecom, content</span></a>
+            <a href="industries-healthcare-consumer.html" role="menuitem"><span class="dd-title">Healthcare &amp; Consumer</span><span class="dd-sub">Retail, hospitality, education</span></a>
+          </div>
+        </li>
         <li><a href="process.html">How It Works</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
     </div>
   </nav>
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
-    <a href="index.html">Home</a><a href="about.html">Our Story</a><a href="services.html">Services</a>
-    <a href="industries.html">Industries</a><a href="process.html">How It Works</a>
-    <a href="contact.html" class="mobile-cta">Contact</a>
+    <a href="index.html">Home</a>
+    <details class="mobile-group">
+      <summary>Our Story <svg class="mg-chevron" width="12" height="12" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></summary>
+      <div class="mobile-sub">
+      <a href="about.html">Our Story</a>
+      <a href="why-us.html">Why Choose Us</a>
+      <a href="culture.html">Our Culture</a>
+      </div>
+    </details>
+    <details class="mobile-group">
+      <summary>Services <svg class="mg-chevron" width="12" height="12" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></summary>
+      <div class="mobile-sub">
+      <a href="accounting.html">Accounting &amp; Finance</a>
+      <a href="engineering.html">Engineering &amp; Technical</a>
+      <a href="creative.html">Creative &amp; IT</a>
+      </div>
+    </details>
+    <details class="mobile-group">
+      <summary>Industries <svg class="mg-chevron" width="12" height="12" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></summary>
+      <div class="mobile-sub">
+      <a href="industries-professional-financial.html">Professional &amp; Financial</a>
+      <a href="industries-engineering-utilities.html">Engineering &amp; Utilities</a>
+      <a href="industries-technology-media.html">Technology &amp; Media</a>
+      <a href="industries-healthcare-consumer.html">Healthcare &amp; Consumer</a>
+      </div>
+    </details>
+    <a href="process.html">How It Works</a>
+    <a href="contact.html" class="mobile-cta">Contact Us</a>
   </div>
 
   <main id="main">
@@ -48,73 +95,44 @@
       </div>
     </section>
 
-    <section class="services-detailed" aria-labelledby="services-detailed-heading">
+    <section aria-labelledby="services-hub-heading">
       <div class="container">
-        <h2 id="services-detailed-heading" class="sr-only">Detailed service offerings</h2>
-
-        <div class="service-pillar">
-          <div class="pillar-header">
-            <span class="pillar-icon" aria-hidden="true">📊</span>
-            <div>
-              <span class="pillar-tag">Pillar 01</span>
-              <h2>Financial Infrastructure &amp; Accounting</h2>
-            </div>
+        <h2 id="services-hub-heading" class="sr-only">Service pillars</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <span class="service-icon" aria-hidden="true">&#128202;</span>
+            <h3>Financial Infrastructure &amp; Accounting</h3>
+            <p>Bookkeeping, FP&amp;A, controller support, audit readiness — CPA-level precision for every engagement.</p>
+            <ul class="service-list" aria-label="Financial services">
+              <li>Virtual CFO Services</li>
+              <li>Tax &amp; Compliance</li>
+              <li>Financial Reporting</li>
+            </ul>
+            <a href="accounting.html" class="service-more">Explore Accounting &amp; Finance &rarr;</a>
           </div>
-          <div class="pillar-content">
-            <p>Transform your numbers into strategic growth. Our university-trained finance professionals deliver flawless back-office compliance and actionable insights — giving you CFO-level clarity without the CFO price tag.</p>
-            <div class="offering-grid">
-              <div class="offering"><strong>Bookkeeping</strong>Daily reconciliations, AP/AR management, chart of accounts</div>
-              <div class="offering"><strong>Virtual Controller</strong>Strategic financial oversight and month-end close</div>
-              <div class="offering"><strong>FP&amp;A</strong>Budgeting, forecasting, variance analysis</div>
-              <div class="offering"><strong>Audit Readiness</strong>GAAP/IFRS compliance, documentation support</div>
-              <div class="offering"><strong>Tax &amp; Compliance</strong>Multi-jurisdiction filing support</div>
-              <div class="offering"><strong>Virtual CFO</strong>C-suite strategic advisory at offshore rates</div>
-            </div>
+          <div class="service-card">
+            <span class="service-icon" aria-hidden="true">&#9881;&#65039;</span>
+            <h3>Engineering &amp; Technical Services</h3>
+            <p>CAD drafting, 3D modeling, MEP, quantity surveying, and structural design with rigorous accuracy.</p>
+            <ul class="service-list" aria-label="Engineering services">
+              <li>BIM Ready</li>
+              <li>Technical Estimation</li>
+              <li>Project Documentation</li>
+            </ul>
+            <a href="engineering.html" class="service-more">Explore Engineering &amp; Technical &rarr;</a>
           </div>
-        </div>
-
-        <div class="service-pillar">
-          <div class="pillar-header">
-            <span class="pillar-icon" aria-hidden="true">⚙️</span>
-            <div>
-              <span class="pillar-tag">Pillar 02</span>
-              <h2>Engineering &amp; Technical Services</h2>
-            </div>
-          </div>
-          <div class="pillar-content">
-            <p>Accelerate your project timelines without compromising on technical precision. Our engineering division handles complex documentation, 3D visualization, and cost estimation with rigorous accuracy.</p>
-            <div class="offering-grid">
-              <div class="offering"><strong>CAD Drafting</strong>2D/3D technical drawings, as-built plans</div>
-              <div class="offering"><strong>3D Modeling</strong>MEP, structural, architectural visualization</div>
-              <div class="offering"><strong>Quantity Surveying</strong>Cost estimation, BOQ preparation</div>
-              <div class="offering"><strong>BIM Services</strong>Revit modeling, clash detection</div>
-              <div class="offering"><strong>Technical Documentation</strong>Specs, permits, compliance reports</div>
-              <div class="offering"><strong>Project Coordination</strong>RFI management, submittal tracking</div>
-            </div>
+          <div class="service-card">
+            <span class="service-icon" aria-hidden="true">&#127912;</span>
+            <h3>Creative Multimedia &amp; IT Services</h3>
+            <p>Photo/video editing, web development, full-stack, graphic design — elevate your digital presence.</p>
+            <ul class="service-list" aria-label="Creative services">
+              <li>Responsive Web Design</li>
+              <li>Brand Storytelling</li>
+              <li>Full-Stack Development</li>
+            </ul>
+            <a href="creative.html" class="service-more">Explore Creative &amp; IT &rarr;</a>
           </div>
         </div>
-
-        <div class="service-pillar">
-          <div class="pillar-header">
-            <span class="pillar-icon" aria-hidden="true">🎨</span>
-            <div>
-              <span class="pillar-tag">Pillar 03</span>
-              <h2>Creative Multimedia &amp; IT Services</h2>
-            </div>
-          </div>
-          <div class="pillar-content">
-            <p>Elevate your digital presence and optimize your user experience through striking visual storytelling and robust digital architecture built by people who genuinely care about the craft.</p>
-            <div class="offering-grid">
-              <div class="offering"><strong>Photo &amp; Video Editing</strong>Professional post-production, color grading</div>
-              <div class="offering"><strong>Graphic Design</strong>Branding, marketing assets, print</div>
-              <div class="offering"><strong>Web Development</strong>Responsive, full-stack applications</div>
-              <div class="offering"><strong>UI/UX Design</strong>User-centered interfaces and prototyping</div>
-              <div class="offering"><strong>Social Media</strong>Content creation and community management</div>
-              <div class="offering"><strong>IT Support</strong>Helpdesk, cloud services, network support</div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
 
@@ -127,15 +145,39 @@
       </div>
     </section>
 
+
   </main>
 
   <footer>
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand"><div class="footer-logo">TABLAS CREEK</div><p>Business Process Outsourcing Services</p><p class="copyright">&copy; 2025 Tablas Creek. All rights reserved.</p></div>
-        <div class="footer-links"><h4>Company</h4><a href="about.html">Our Story</a><a href="services.html">Services</a></div>
-        <div class="footer-links"><h4>Resources</h4><a href="process.html">How It Works</a></div>
-        <div class="footer-links"><h4>Connect</h4><a href="contact.html">Contact Us</a></div>
+        <div class="footer-brand">
+          <div class="footer-logo">TABLAS CREEK</div>
+          <p>Business Process Outsourcing Services<br>from Tablas Island, Philippines.</p>
+          <p class="copyright">&copy; 2025 Tablas Creek. All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <a href="about.html">Our Story</a>
+          <a href="why-us.html">Why Choose Us</a>
+          <a href="culture.html">Our Culture</a>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <a href="accounting.html">Accounting &amp; Finance</a>
+          <a href="engineering.html">Engineering &amp; Technical</a>
+          <a href="creative.html">Creative &amp; IT</a>
+        </div>
+        <div class="footer-links">
+          <h4>Industries</h4>
+          <a href="industries.html">All Industries</a>
+          <a href="process.html">How It Works</a>
+        </div>
+        <div class="footer-links">
+          <h4>Connect</h4>
+          <a href="contact.html">Contact Us</a>
+          <a href="contact.html">We're Hiring</a>
+        </div>
       </div>
     </div>
   </footer>

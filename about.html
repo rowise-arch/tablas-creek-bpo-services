@@ -24,21 +24,69 @@
       </button>
       <ul class="nav-links" role="list">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">Our Story</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="industries.html">Industries</a></li>
+        <li class="has-dropdown">
+          <a href="about.html" class="nav-link-dropdown active">Our Story <svg class="chevron" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
+          <div class="dropdown-panel" role="menu">
+            <a href="about.html" role="menuitem" aria-current="page"><span class="dd-title">Our Story</span><span class="dd-sub">How it all began</span></a>
+            <a href="why-us.html" role="menuitem"><span class="dd-title">Why Choose Us</span><span class="dd-sub">What sets us apart</span></a>
+            <a href="culture.html" role="menuitem"><span class="dd-title">Our Culture</span><span class="dd-sub">Community &amp; values</span></a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="services.html" class="nav-link-dropdown">Services <svg class="chevron" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
+          <div class="dropdown-panel" role="menu">
+            <a href="accounting.html" role="menuitem"><span class="dd-title">Accounting &amp; Finance</span><span class="dd-sub">Bookkeeping, FP&amp;A, Virtual CFO</span></a>
+            <a href="engineering.html" role="menuitem"><span class="dd-title">Engineering &amp; Technical</span><span class="dd-sub">CAD, BIM, Quantity Surveying</span></a>
+            <a href="creative.html" role="menuitem"><span class="dd-title">Creative &amp; IT</span><span class="dd-sub">Design, Development, Media</span></a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="industries.html" class="nav-link-dropdown">Industries <svg class="chevron" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
+          <div class="dropdown-panel" role="menu">
+            <a href="industries-professional-financial.html" role="menuitem"><span class="dd-title">Professional &amp; Financial</span><span class="dd-sub">Legal, consulting, insurance</span></a>
+            <a href="industries-engineering-utilities.html" role="menuitem"><span class="dd-title">Engineering &amp; Utilities</span><span class="dd-sub">Construction, renewables</span></a>
+            <a href="industries-technology-media.html" role="menuitem"><span class="dd-title">Technology &amp; Media</span><span class="dd-sub">IT, telecom, content</span></a>
+            <a href="industries-healthcare-consumer.html" role="menuitem"><span class="dd-title">Healthcare &amp; Consumer</span><span class="dd-sub">Retail, hospitality, education</span></a>
+          </div>
+        </li>
         <li><a href="process.html">How It Works</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
     </div>
   </nav>
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
-    <a href="index.html">Home</a><a href="about.html">Our Story</a><a href="services.html">Services</a>
-    <a href="industries.html">Industries</a><a href="process.html">How It Works</a>
-    <a href="contact.html" class="mobile-cta">Contact</a>
+    <a href="index.html">Home</a>
+    <details class="mobile-group" open>
+      <summary>Our Story <svg class="mg-chevron" width="12" height="12" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></summary>
+      <div class="mobile-sub">
+      <a href="about.html">Our Story</a>
+      <a href="why-us.html">Why Choose Us</a>
+      <a href="culture.html">Our Culture</a>
+      </div>
+    </details>
+    <details class="mobile-group">
+      <summary>Services <svg class="mg-chevron" width="12" height="12" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></summary>
+      <div class="mobile-sub">
+      <a href="accounting.html">Accounting &amp; Finance</a>
+      <a href="engineering.html">Engineering &amp; Technical</a>
+      <a href="creative.html">Creative &amp; IT</a>
+      </div>
+    </details>
+    <details class="mobile-group">
+      <summary>Industries <svg class="mg-chevron" width="12" height="12" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></summary>
+      <div class="mobile-sub">
+      <a href="industries-professional-financial.html">Professional &amp; Financial</a>
+      <a href="industries-engineering-utilities.html">Engineering &amp; Utilities</a>
+      <a href="industries-technology-media.html">Technology &amp; Media</a>
+      <a href="industries-healthcare-consumer.html">Healthcare &amp; Consumer</a>
+      </div>
+    </details>
+    <a href="process.html">How It Works</a>
+    <a href="contact.html" class="mobile-cta">Contact Us</a>
   </div>
 
   <main id="main">
+
 
     <section class="page-hero" aria-labelledby="page-hero-heading">
       <div class="container">
@@ -72,32 +120,13 @@
       </div>
     </section>
 
-    <section class="values bg-ink" aria-labelledby="values-heading">
+    <section class="cta-banner-small" aria-labelledby="story-more-heading">
       <div class="container">
-        <div class="section-header light">
-          <span class="section-label">Core Values</span>
-          <h2 id="values-heading">What Drives Us</h2>
-        </div>
-        <div class="values-grid">
-          <div class="value-card">
-            <span class="value-icon" aria-hidden="true">🏝️</span>
-            <h3>Community First</h3>
-            <p>We invest in our people and their future on Tablas Island.</p>
-          </div>
-          <div class="value-card">
-            <span class="value-icon" aria-hidden="true">🎯</span>
-            <h3>Excellence Always</h3>
-            <p>Top 1% talent delivering world-class results, every engagement.</p>
-          </div>
-          <div class="value-card">
-            <span class="value-icon" aria-hidden="true">🤝</span>
-            <h3>Global Partnership</h3>
-            <p>Your success is our success — we grow together, long term.</p>
-          </div>
-          <div class="value-card">
-            <span class="value-icon" aria-hidden="true">🌱</span>
-            <h3>Sustainable Growth</h3>
-            <p>Creating opportunities that last generations on the island.</p>
+        <div class="cta-inner">
+          <h3 id="story-more-heading">Want the full picture?</h3>
+          <div class="btn-group">
+            <a href="why-us.html" class="btn btn-outline">Why Choose Us &rarr;</a>
+            <a href="culture.html" class="btn btn-outline">Our Culture &amp; Values &rarr;</a>
           </div>
         </div>
       </div>
@@ -118,6 +147,7 @@
       </div>
     </section>
 
+  
   </main>
 
   <footer>
@@ -125,12 +155,31 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="footer-logo">TABLAS CREEK</div>
-          <p>Business Process Outsourcing Services</p>
+          <p>Business Process Outsourcing Services<br>from Tablas Island, Philippines.</p>
           <p class="copyright">&copy; 2025 Tablas Creek. All rights reserved.</p>
         </div>
-        <div class="footer-links"><h4>Company</h4><a href="about.html">Our Story</a><a href="services.html">Services</a><a href="industries.html">Industries</a></div>
-        <div class="footer-links"><h4>Resources</h4><a href="process.html">How It Works</a><a href="#">Case Studies</a></div>
-        <div class="footer-links"><h4>Connect</h4><a href="contact.html">Contact Us</a><a href="#">We're Hiring</a></div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <a href="about.html">Our Story</a>
+          <a href="why-us.html">Why Choose Us</a>
+          <a href="culture.html">Our Culture</a>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <a href="accounting.html">Accounting &amp; Finance</a>
+          <a href="engineering.html">Engineering &amp; Technical</a>
+          <a href="creative.html">Creative &amp; IT</a>
+        </div>
+        <div class="footer-links">
+          <h4>Industries</h4>
+          <a href="industries.html">All Industries</a>
+          <a href="process.html">How It Works</a>
+        </div>
+        <div class="footer-links">
+          <h4>Connect</h4>
+          <a href="contact.html">Contact Us</a>
+          <a href="contact.html">We're Hiring</a>
+        </div>
       </div>
     </div>
   </footer>

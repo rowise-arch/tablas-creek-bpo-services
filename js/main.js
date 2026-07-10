@@ -38,6 +38,47 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ── Nav dropdown (Services submenu) ─────────────────── */
+  document.querySelectorAll('.has-dropdown').forEach(item => {
+    const toggle = item.querySelector('.nav-link-dropdown');
+    if (!toggle) return;
+
+    toggle.setAttribute('aria-haspopup', 'true');
+    toggle.setAttribute('aria-expanded', 'false');
+
+    // Click toggles on touch/keyboard; hover handled by CSS on pointer devices
+    toggle.addEventListener('click', (e) => {
+      const isTouch = matchMedia('(hover: none)').matches;
+      if (isTouch) {
+        e.preventDefault();
+        const willOpen = !item.classList.contains('open');
+        document.querySelectorAll('.has-dropdown.open').forEach(o => {
+          if (o !== item) { o.classList.remove('open'); o.querySelector('.nav-link-dropdown')?.setAttribute('aria-expanded', 'false'); }
+        });
+        item.classList.toggle('open', willOpen);
+        toggle.setAttribute('aria-expanded', String(willOpen));
+      }
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    document.querySelectorAll('.has-dropdown.open').forEach(item => {
+      if (!item.contains(e.target)) {
+        item.classList.remove('open');
+        item.querySelector('.nav-link-dropdown')?.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.has-dropdown.open').forEach(item => {
+        item.classList.remove('open');
+        item.querySelector('.nav-link-dropdown')?.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+
   /* ── Navbar scroll shadow ─────────────────────────────── */
   const navbar = document.querySelector('.navbar');
   if (navbar) {
