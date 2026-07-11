@@ -26,6 +26,14 @@
   --sand-dark:  #C8D8E6;
   --white:      #FFFFFF;
 
+  /* Fixed "chrome" tokens — always dark-bg/light-text, regardless of
+     prefers-color-scheme. Used for footer, hero banners, CTA bands,
+     and other elements whose dark styling is a brand choice, not a
+     light/dark theme choice. Do NOT redefine these in the dark-mode
+     media query below. */
+  --chrome-dark:  #0B1723;
+  --chrome-light: #F5F3EE;
+
   /* Semantic tokens */
   --surface:        var(--white);
   --surface-raised: var(--cream);
@@ -201,10 +209,10 @@ section { padding: var(--space-20) 0; }
 
 .section-header.light .section-label { color: var(--teal-light); }
 .section-header.light .section-label::before { background: var(--teal-light); }
-.section-header.light h2 { color: var(--cream); }
+.section-header.light h2 { color: var(--chrome-light); }
 
 .bg-sand { background: var(--sand); }
-.bg-ink  { background: var(--ink); color: var(--cream); }
+.bg-ink  { background: var(--chrome-dark); color: var(--chrome-light); }
 .mt-4 { margin-top: var(--space-8); }
 .text-center { text-align: center; }
 
@@ -513,8 +521,8 @@ section { padding: var(--space-20) 0; }
 .mobile-group .mobile-sub a:hover { background: var(--sand); color: var(--teal); }
 
 .mobile-cta {
-  background: var(--ink) !important;
-  color: var(--cream) !important;
+  background: var(--chrome-dark) !important;
+  color: var(--chrome-light) !important;
   font-family: var(--font-body) !important;
   font-size: 0.9rem !important;
   font-weight: 600 !important;
@@ -552,9 +560,9 @@ section { padding: var(--space-20) 0; }
 .btn:active { transform: scale(0.98); }
 
 .btn-primary {
-  background: var(--ink);
-  color: var(--cream);
-  border-color: var(--ink);
+  background: var(--chrome-dark);
+  color: var(--chrome-light);
+  border-color: var(--chrome-dark);
 }
 
 .btn-primary:hover {
@@ -935,13 +943,13 @@ section { padding: var(--space-20) 0; }
 .compare-competitor { border-left: 3px solid #E74C3C; }
 
 .compare-us {
-  background: var(--ink);
+  background: var(--chrome-dark);
   border: 1px solid rgba(42,157,143,0.3);
   border-left: 3px solid var(--teal);
-  color: var(--cream);
+  color: var(--chrome-light);
 }
 
-.compare-us h3 { color: var(--cream); }
+.compare-us h3 { color: var(--chrome-light); }
 
 .compare-card ul { list-style: none; display: flex; flex-direction: column; gap: var(--space-3); }
 
@@ -1071,8 +1079,8 @@ section { padding: var(--space-20) 0; }
    CTA Banner
    ============================================================ */
 .cta-banner {
-  background: var(--ink);
-  color: var(--cream);
+  background: var(--chrome-dark);
+  color: var(--chrome-light);
   text-align: center;
   border-radius: var(--radius-xl);
   margin: var(--space-8) auto;
@@ -1131,8 +1139,8 @@ section { padding: var(--space-20) 0; }
    Page Hero (inner pages)
    ============================================================ */
 .page-hero {
-  background: var(--ink);
-  color: var(--cream);
+  background: var(--chrome-dark);
+  color: var(--chrome-light);
   text-align: center;
   padding: calc(var(--nav-h) + var(--space-16)) 0 var(--space-16);
   position: relative;
@@ -1226,8 +1234,8 @@ section { padding: var(--space-20) 0; }
 }
 
 .mission-statement {
-  background: var(--ink);
-  color: var(--cream);
+  background: var(--chrome-dark);
+  color: var(--chrome-light);
   padding: var(--space-5) var(--space-6);
   border-radius: var(--radius-lg);
   font-size: 0.875rem;
@@ -1279,7 +1287,7 @@ section { padding: var(--space-20) 0; }
 .value-card h3 {
   font-family: var(--font-display);
   font-size: 1.2rem;
-  color: var(--cream);
+  color: var(--chrome-light);
   margin-bottom: var(--space-2);
 }
 
@@ -1379,8 +1387,8 @@ section { padding: var(--space-20) 0; }
   align-items: center;
   gap: var(--space-5);
   padding: var(--space-8);
-  background: var(--ink);
-  color: var(--cream);
+  background: var(--chrome-dark);
+  color: var(--chrome-light);
 }
 
 .pillar-icon { font-size: 2.5rem; }
@@ -1399,7 +1407,7 @@ section { padding: var(--space-20) 0; }
   font-family: var(--font-display);
   font-size: 1.7rem;
   font-weight: 500;
-  color: var(--cream);
+  color: var(--chrome-light);
 }
 
 .pillar-content {
@@ -1510,8 +1518,8 @@ section { padding: var(--space-20) 0; }
    Footer
    ============================================================ */
 footer {
-  background: var(--ink);
-  color: var(--cream);
+  background: var(--chrome-dark);
+  color: var(--chrome-light);
   padding-top: var(--space-8);
   border-top: 1px solid rgba(42,157,143,0.15);
 }
