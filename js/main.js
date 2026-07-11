@@ -148,6 +148,29 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ── Calendly lazy load (contact page) ───────────────── */
 document.addEventListener('DOMContentLoaded', () => {
 
+  const footer = document.querySelector('footer');
+  if (footer && !footer.querySelector('.footer-social')) {
+    footer.innerHTML = `
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="tablas-creek-logo.png" alt="Tablas Creek" class="footer-logo-img">
+            <p>Business Process Outsourcing Services<br>from Tablas Island, Philippines.</p>
+            <div class="footer-contact"><a href="mailto:hello@tablascreek.com">hello@tablascreek.com</a><a href="tel:+6321234567">+63 (2) 1234 5678</a></div>
+            <div class="footer-social" role="list" aria-label="Social media">
+              <a href="#" aria-label="Tablas Creek on LinkedIn" role="listitem"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+              <a href="#" aria-label="Tablas Creek on Facebook" role="listitem"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8.2h2.75l.41-3.19h-3.16V7.55c0-.92.26-1.55 1.58-1.55h1.68V3.14C16.47 3.1 15.44 3 14.24 3c-2.5 0-4.22 1.53-4.22 4.34v2.27H7.25v3.19h2.77V21h3.48z"/></svg></a>
+            </div>
+          </div>
+          <div class="footer-links"><h4>Company</h4><a href="about.html">Our Story</a><a href="why-us.html">Why Choose Us</a><a href="culture.html">Our Culture</a><a href="process.html">How It Works</a></div>
+          <div class="footer-links"><h4>Services</h4><a href="accounting.html">Accounting &amp; Finance</a><a href="engineering.html">Engineering &amp; Technical</a><a href="creative.html">Creative &amp; IT</a></div>
+          <div class="footer-links"><h4>Industries</h4><a href="industries.html">All Industries</a><a href="industries-professional-financial.html">Professional &amp; Financial</a><a href="industries-engineering-utilities.html">Engineering &amp; Utilities</a><a href="industries-technology-media.html">Technology &amp; Media</a><a href="industries-healthcare-consumer.html">Healthcare &amp; Consumer</a></div>
+          <div class="footer-links"><h4>Connect</h4><a href="contact.html">Contact Us</a><a href="careers.html">Careers</a></div>
+        </div>
+        <div class="footer-bottom"><p class="copyright">&copy; <span data-current-year>2026</span> Tablas Creek. All rights reserved.</p><div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div><a href="#main" class="back-to-top">Back to top &uarr;</a></div>
+      </div>`;
+  }
+
   document.querySelectorAll('[data-current-year]').forEach(el => {
     el.textContent = new Date().getFullYear();
   });
