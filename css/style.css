@@ -712,6 +712,26 @@ section { padding: var(--space-20) 0; }
   border-top: 1px solid var(--border);
 }
 
+.hero-proof-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  list-style: none;
+  margin-top: var(--space-6);
+}
+
+.hero-proof-list li {
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.hero-proof-list li::before {
+  content: '✓';
+  color: var(--teal);
+  margin-right: var(--space-2);
+}
+
 .stat { display: flex; flex-direction: column; gap: 2px; }
 
 .stat-number {
@@ -857,10 +877,15 @@ section { padding: var(--space-20) 0; }
 .service-card:hover::before { transform: scaleX(1); }
 
 .service-icon {
-  font-size: 2rem;
+  color: var(--teal);
   margin-bottom: var(--space-5);
   display: block;
 }
+
+.service-icon svg { width: 30px; height: 30px; display: block; }
+.service-icon-finance { color: #378ADD; }
+.service-icon-engineering { color: var(--teal); }
+.service-icon-creative { color: #8B5CF6; }
 
 .service-card h3 {
   font-family: var(--font-display);
@@ -940,6 +965,17 @@ section { padding: var(--space-20) 0; }
   margin-bottom: var(--space-5);
 }
 
+.compare-kicker {
+  display: block;
+  margin-bottom: var(--space-2);
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.compare-us .compare-kicker { color: var(--teal-light); }
+
 .compare-competitor { border-left: 3px solid #E74C3C; }
 
 .compare-us {
@@ -965,6 +1001,8 @@ section { padding: var(--space-20) 0; }
 
 .compare-us li { border-bottom-color: rgba(255,255,255,0.08); }
 .compare-card li:last-child { border-bottom: none; }
+.compare-card li::before { content: '—'; color: var(--text-muted); }
+.compare-us li::before { content: '✓'; color: var(--teal-light); }
 
 /* ============================================================
    Process steps
@@ -1514,6 +1552,24 @@ section { padding: var(--space-20) 0; }
   padding: var(--space-12) 0;
 }
 
+.contact-label {
+  display: block;
+  margin-bottom: var(--space-2);
+  color: var(--teal);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contact-detail { margin-top: var(--space-3); }
+.info-card p a { color: var(--text-primary); font-weight: 600; text-decoration-color: rgba(42,157,143,0.45); }
+.info-card p a:hover { color: var(--teal-dark); }
+.contact-tags { margin-top: var(--space-4); }
+.btn-full { width: 100%; justify-content: center; }
+.calendly-placeholder .btn + .btn { margin-top: var(--space-4); }
+.booking-note { margin-top: var(--space-4); color: var(--text-muted); font-size: 0.78rem; text-align: center; }
+
 /* ============================================================
    Footer
    ============================================================ */
@@ -1687,7 +1743,7 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .hero-card { display: none; } /* Hide card on small screens to prioritize content */
+  .hero-card { max-width: 560px; } /* Keep the service proof visible after the hero stacks */
 
   .services-grid { grid-template-columns: 1fr; }
   .compare-grid { grid-template-columns: 1fr; }
@@ -1707,6 +1763,7 @@ footer {
   section { padding: var(--space-12) 0; }
 
   .hero-stats { flex-wrap: wrap; gap: var(--space-5); }
+  .hero-proof-list { gap: var(--space-2) var(--space-3); }
   .btn-group { flex-direction: column; align-items: stretch; }
   .btn { justify-content: center; }
 

@@ -103,22 +103,22 @@
             <div class="info-card">
               <h3>Direct Contact</h3>
               <p>
-                <strong style="font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:0.5rem">Email</strong>
-                hello@tablascreek.com
+                <strong class="contact-label">Email</strong>
+                <a href="mailto:hello@tablascreek.com">hello@tablascreek.com</a>
               </p>
-              <p style="margin-top:0.75rem">
-                <strong style="font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:0.5rem">Phone</strong>
-                +63 (2) 1234 5678
+              <p class="contact-detail">
+                <strong class="contact-label">Phone</strong>
+                <a href="tel:+6321234567">+63 (2) 1234 5678</a>
               </p>
-              <p style="margin-top:0.75rem">
-                <strong style="font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:0.5rem">Office</strong>
+              <p class="contact-detail">
+                <strong class="contact-label">Office</strong>
                 Tablas Island, Romblon, Philippines
               </p>
             </div>
             <div class="info-card">
               <h3>Global Operations</h3>
               <p>We serve clients worldwide with flexible engagement models — full-time dedicated teams, project-based, or hourly support.</p>
-              <div class="tag-group" style="margin-top:1rem">
+              <div class="tag-group contact-tags">
                 <span class="tag">Full-Time Teams</span>
                 <span class="tag">Project-Based</span>
                 <span class="tag">Hourly Support</span>
@@ -135,13 +135,13 @@
               <h3>Schedule a Discovery Call</h3>
               <p>Choose a time that works for you. 30-minute strategy session, no obligation.</p>
               <div class="calendly-placeholder" id="calendlyPlaceholder">
-                <a href="mailto:hello@tablascreek.com" class="btn btn-primary btn-large" style="width:100%;justify-content:center;margin-bottom:1rem">
+                <a href="mailto:hello@tablascreek.com?subject=Discovery%20Call%20Request" class="btn btn-primary btn-large btn-full">
                   Email Us to Schedule
                 </a>
-                <button class="btn btn-outline" id="loadCalendlyBtn" style="width:100%;justify-content:center">
+                <button class="btn btn-outline btn-full" id="loadCalendlyBtn" type="button" data-calendly-url="https://calendly.com/jeffreyrouisse/30min">
                   Load Calendar Widget
                 </button>
-                <p style="margin-top:1rem;font-size:0.78rem;color:var(--text-muted);text-align:center">30-min consultation &middot; No obligation &middot; Any timezone</p>
+                <p class="booking-note">30-min consultation &middot; No obligation &middot; Any timezone</p>
               </div>
               <!-- Calendly container - hidden until button click -->
               <div id="calendlyContainer" style="width:100%; min-height:650px; display:none;"></div>
@@ -187,40 +187,6 @@
       </div>
     </div>
   </footer>
-  <script>
-    // Load Calendly only when button is clicked
-    document.getElementById('loadCalendlyBtn').addEventListener('click', function() {
-      const container = document.getElementById('calendlyContainer');
-      const placeholder = document.getElementById('calendlyPlaceholder');
-
-      // Hide placeholder, show container
-      placeholder.style.display = 'none';
-      container.style.display = 'block';
-
-      // Create wrapper div for proper sizing
-      const wrapper = document.createElement('div');
-      wrapper.className = 'calendly-inline-widget';
-      wrapper.setAttribute('data-url', 'https://calendly.com/jeffreyrouisse/30min');
-      wrapper.style.width = '100%';
-      wrapper.style.height = '650px';
-
-      container.appendChild(wrapper);
-
-      // Load Calendly script if not already loaded
-      if (!window.Calendly) {
-        const script = document.createElement('script');
-        script.src = 'https://assets.calendly.com/assets/external/widget.js';
-        script.async = true;
-        document.head.appendChild(script);
-      } else {
-        window.Calendly.initInlineWidget({
-          url: 'https://calendly.com/jeffreyrouisse/30min',
-          parentElement: wrapper,
-          prefill: {}
-        });
-      }
-    });
-  </script>
   <script src="js/main.js"></script>
 </body>
 </html>

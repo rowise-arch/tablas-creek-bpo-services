@@ -146,25 +146,42 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ── Calendly lazy load (contact page) ───────────────── */
-function loadCalendly() {
+document.addEventListener('DOMContentLoaded', () => {
+
+  document.querySelectorAll('[data-current-year]').forEach(el => {
+    el.textContent = new Date().getFullYear();
+  });
+  const button = document.getElementById('loadCalendlyBtn');
   const placeholder = document.getElementById('calendlyPlaceholder');
-  const inline = document.getElementById('calendlyInline');
-  if (!placeholder || !inline) return;
+  const container = document.getElementById('calendlyContainer');
+  if (!button || !placeholder || !container) return;
 
-  placeholder.style.display = 'none';
-  inline.style.display = 'block';
+  button.addEventListener('click', () => {
+    const url = button.dataset.calendlyUrl;
+    if (!url || container.dataset.loaded) return;
+    container.dataset.loaded = 'true';
+    placeholder.hidden = true;
+    container.style.display = 'block';
 
-  const script = document.createElement('script');
-  script.src = 'https://assets.calendly.com/assets/external/widget.js';
-  script.onload = () => {
+    const mount = document.createElement('div');
+    mount.className = 'calendly-inline-widget';
+    mount.style.cssText = 'width:100%;height:650px';
+    container.appendChild(mount);
+
+    const initialize = () => window.Calendly?.initInlineWidget({ url, parentElement: mount });
     if (window.Calendly) {
-      Calendly.initInlineWidget({
-        url: 'https://calendly.com/tablascreek/discovery',
-        parentElement: inline,
-        prefill: {},
-        utm: {}
-      });
+      initialize();
+      return;
     }
-  };
-  document.head.appendChild(script);
-}
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    script.onload = initialize;
+    script.onerror = () => {
+      container.style.display = 'none';
+      placeholder.hidden = false;
+      container.dataset.loaded = '';
+    };
+    document.head.appendChild(script);
+  });
+});
